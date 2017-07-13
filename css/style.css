@@ -4,7 +4,7 @@ body {
 }
 h1 {
 	font-family: Raleway, sans-serif;
-	color: #0D2C40;
+	color: #FFF;
 	letter-spacing: 1px;
 	font-weight: 400;
 	font-size: 45px;
@@ -13,7 +13,7 @@ h1 {
 }
 a {
 	font-family: Raleway, sans-serif;
-	color: #F15B31;
+	color: #FFF;
 	letter-spacing: 1px;
 	font-weight: 600;
 	font-size: 18px;
@@ -43,13 +43,11 @@ a:hover {
 header {
 	background-color: #F15B31;
 	padding: 30px 20px;
-	/*margin: 0;*/
 }
 
 nav {
 	background-color: #00A6B3;
 	padding: 20px 0;
-	/*margin: 0;*/
 }
 
 main {
