@@ -1,3 +1,4 @@
+var score = 0;
 var cards = [
 	{
 	rank: "queen",
@@ -24,8 +25,9 @@ var cardsInPlay = [];
 
 var checkForMatch = function(){
 	if (cardsInPlay.length === 2){
-		cardsInPlay[0] === cardsInPlay[1] ? alert("You've found a match!"):alert("Sorry, try again.");
+		cardsInPlay[0] === cardsInPlay[1] ? addToScore():alert("Sorry, try again.");
 	}
+	
 }
 
 var flipCard = function(){
@@ -41,13 +43,34 @@ var flipCard = function(){
 }
 var createBoard = function(){
 	for (var i = 0; i < cards.length; i++){
+		cardsInPlay = [];
 		var cardElement = document.createElement('img');
 		cardElement.setAttribute('src','images/back.png');
+		cardElement.setAttribute('class','card-images');
 		cardElement.setAttribute('data-id',i);
 		cardElement.addEventListener('click', flipCard);
 		document.getElementById('game-board').appendChild(cardElement);
 		console.log('cardElement = '+ cardElement);
 	}
 }
+
+var addToScore = function(){
+	score = score + 1;
+	document.getElementById('score-text').innerHTML = "Score = " + score;
+	console.log('score = '+ score);
+	alert("You've found a match!");
+}
+
+var reset = function(){
+	
+	for (var i = 0; i < 4; i++){
+		document.getElementsByTagName("img")[0].remove();
+	}
+	createBoard();
+}
+
+document.getElementById('reset-button').addEventListener('click', reset);
+
+
 
 createBoard();
